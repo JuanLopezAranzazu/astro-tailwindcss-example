@@ -1,0 +1,30 @@
+---
+//layouts
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+//data
+import DATA from "../../../MOCK_DATA.json";
+//static
+export async function getStaticPaths() {
+    return DATA.map((user) => {
+        return {
+            params: { id: user.id },
+        };
+    });
+}
+const { id } = Astro.params;
+
+const { first_name, last_name, gender, email, job_title } = DATA.find(
+    (user) => user.id == id,
+);
+---
+
+<DefaultLayout>
+    <div
+        class="flex flex-col items-center gap-2"
+    >
+        <h2 class="text-2xl font-bold">{`${first_name} ${last_name}`}</h2>
+        <p class="text-zinc-400">Gender: {gender}</p>
+        <p class="text-zinc-400">Email: {email}</p>
+        <p class="text-zinc-400">Job Title: {job_title}</p>
+    </div>
+</DefaultLayout>

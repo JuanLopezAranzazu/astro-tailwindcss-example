@@ -1,0 +1,12 @@
+---
+//components
+import UserList from "../components/UserList.astro";
+//layouts
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+//data
+import DATA from "../../MOCK_DATA.json";
+---
+
+<DefaultLayout>
+	<UserList DATA={DATA} />
+</DefaultLayout>
