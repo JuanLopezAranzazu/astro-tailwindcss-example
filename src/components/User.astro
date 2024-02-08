@@ -1,12 +1,14 @@
 ---
 const { id, first_name, last_name, job_title } = Astro.props;
+
+const job_title_value = job_title ? job_title : "Job Not found";
 ---
 
 <a href={`/Users/${id}`}>
     <div
-        class="bg-gray-800 text-white p-4 rounded-md shadow-md flex justify-between items-center"
+        class="bg-[#3192bf] text-white p-4 rounded-md shadow-md flex justify-between items-center"
     >
         <h2 class="text-2xl font-bold">{`${first_name} ${last_name}`}</h2>
-        <p class="text-zinc-300">{job_title}</p>
+        <p class="text-zinc-300">{job_title_value}</p>
     </div>
 </a>

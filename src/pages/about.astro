@@ -1,4 +1,6 @@
 ---
+//components
+import Button from "../components/Button";
 //layouts
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 ---
@@ -6,5 +8,6 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
 <DefaultLayout>
     <div class="flex flex-col items-center gap-2">
         <h2 class="text-2xl font-bold">About!</h2>
+        <Button client:visible />
     </div>
 </DefaultLayout>
